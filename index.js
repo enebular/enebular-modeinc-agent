@@ -7,7 +7,7 @@ const device = new ModeDevice(DEVICE_ID, DEVICE_API_KEY);
 const agent = new EnebularAgent({
   command: 'npm',
   args: ['run', 'start' ],
-  pkgDir: '../../../node-red',
+  pkgDir: process.env.NODE_RED_DIR,
 });
 
 async function fetchAndUpdateFlow(params) {
