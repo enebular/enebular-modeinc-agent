@@ -18,6 +18,8 @@ async function fetchAndUpdateFlow(params) {
 async function startup() {
   device.commandCallback = (msg, flags) => {
     console.log(msg, flags);
+    console.log('msg actoin----------------------', msg, flags)
+    
     switch(msg.action) {
       case 'update-flow':
         fetchAndUpdateFlow(msg.parameters);
@@ -38,5 +40,8 @@ async function startup() {
 }
 
 if (require.main === module) {
+  console.log('haro----------------------')
   startup();
+} else {
+  console.log('nooooaro----------------------')
 }
