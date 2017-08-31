@@ -5,11 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel index.js -d lib",
-    "start": "node lib/index.js",
+    "start": "NODE_RED_DIR=./node-red node lib/index.js",
     "lint": "eslint *.js"
-  },
-  "bin": {
-    "enebular-modeinc-agent": "./bin/enebular-modeinc-agent"
   },
   "author": "",
   "license": "MIT",
@@ -22,8 +19,9 @@
     "eslint": "^3.12.2"
   },
   "dependencies": {
-    "mode-device": "^1.1.5",
     "babel-runtime": "^6.23.0",
-    "enebular-runtime-agent": "enebular/enebular-runtime-agent"
+    "enebular-runtime-agent": "enebular/enebular-runtime-agent",
+    "mode-device": "^1.1.5",
+    "node-red": "file:node-red"
   }
 }
